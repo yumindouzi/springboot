@@ -39,10 +39,15 @@ git push origin test
 2.合入分支
 
 1、（切换到主分支）
-git checkout master
+  git checkout master
 
 2、（合并某个分支到主干）
-git merge <branchName>
+  git merge <branchName>
 
 2、（push代码）
-git push origin
+  git push origin
+
+
+3.使用git命令拉取分支代码
+
+命令：git clone -b develop XXX 
