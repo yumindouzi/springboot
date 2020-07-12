@@ -45,4 +45,4 @@ git checkout master
 git merge <branchName>
 
 2、（push代码）
-git push
+git push origin
