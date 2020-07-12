@@ -35,3 +35,14 @@ git push origin test
 3、git branch test（创建分支）
 4、git checkout &nbsp;test （切换分支）
 5、git push origin test:test
+
+2.合入分支
+
+1、（切换到主分支）
+git checkout master
+
+2、（合并某个分支到主干）
+git merge <branchName>
+
+2、（push代码）
+git push
