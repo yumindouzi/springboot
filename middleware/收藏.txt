@@ -1,0 +1,5 @@
+
+
+nginx:
+  https://blog.csdn.net/kingscoming/article/details/79042874
+  https://www.jb51.net/article/130182.htm

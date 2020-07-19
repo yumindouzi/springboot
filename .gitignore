@@ -4,3 +4,4 @@ target
 /beta/logs
 /beta/errlogs
 *.iml
+/springboot-war/*.cmd
