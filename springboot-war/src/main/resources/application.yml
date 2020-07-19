@@ -2,3 +2,10 @@
 spring:
   profiles:
     active: dao
+
+mybatis:
+  mapper-locations: classpath*:mybatis/*Mapper.xml
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    com.mycom.ssmdemo: debug

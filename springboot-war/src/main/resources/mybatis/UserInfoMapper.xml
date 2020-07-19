@@ -1,64 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hanxin.springbootwar.dao.mapper.UserInfoMapper">
+
   <resultMap id="BaseResultMap" type="com.hanxin.springbootwar.dao.entity.UserInfo">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="age" jdbcType="INTEGER" property="age" />
   </resultMap>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from user_info
     where id = #{id,jdbcType=VARCHAR}
   </delete>
+
   <insert id="insert" parameterType="com.hanxin.springbootwar.dao.entity.UserInfo">
     insert into user_info (id, name, age
       )
     values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}
       )
   </insert>
+
   <update id="updateByPrimaryKey" parameterType="com.hanxin.springbootwar.dao.entity.UserInfo">
     update user_info
     set name = #{name,jdbcType=VARCHAR},
       age = #{age,jdbcType=INTEGER}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select id, name, age
     from user_info
     where id = #{id,jdbcType=VARCHAR}
   </select>
+
   <select id="selectAll" resultMap="BaseResultMap">
     select id, name, age
     from user_info
   </select>
-  <resultMap id="BaseResultMap" type="com.hanxin.springbootwar.dao.entity.UserInfo">
-    <id column="id" jdbcType="VARCHAR" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="age" jdbcType="INTEGER" property="age" />
-  </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from user_info
-    where id = #{id,jdbcType=VARCHAR}
-  </delete>
-  <insert id="insert" parameterType="com.hanxin.springbootwar.dao.entity.UserInfo">
-    insert into user_info (id, name, age
-      )
-    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}
-      )
-  </insert>
-  <update id="updateByPrimaryKey" parameterType="com.hanxin.springbootwar.dao.entity.UserInfo">
-    update user_info
-    set name = #{name,jdbcType=VARCHAR},
-      age = #{age,jdbcType=INTEGER}
-    where id = #{id,jdbcType=VARCHAR}
-  </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select id, name, age
-    from user_info
-    where id = #{id,jdbcType=VARCHAR}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, name, age
-    from user_info
-  </select>
+
 </mapper>
