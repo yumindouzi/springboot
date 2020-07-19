@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+  <!-- mysql驱动的位置 这个是MySQL连接的jar包，你需要指定你自己计算机上的jar包的位置-->
+  <classPathEntry
+    location="D:\java\software\maven\apache-maven-3.5.3\repository\mysql\mysql-connector-java\8.0.20\mysql-connector-java-8.0.20.jar" />
+
+  <context id="testTables" defaultModelType="flat" targetRuntime="MyBatis3Simple">
+
+    <commentGenerator>
+      <!-- **阻止**生成的注释包含时间戳 true：是 ： false:否 -->
+      <property name="suppressDate" value="true"/>
+      <!-- **阻止**生成注释 true：是 ： false:否 -->
+      <property name="suppressAllComments" value="true"/>
+    </commentGenerator>
+
+    <!--数据库链接URL，用户名、密码 -->
+    <jdbcConnection
+      driverClass="com.mysql.cj.jdbc.Driver"
+      connectionURL="jdbc:mysql://127.0.0.1/springboot?serverTimezone=Asia/Shanghai"
+      userId="root"
+      password="root">
+    </jdbcConnection>
+
+    <javaTypeResolver>
+      <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
+      <property name="forceBigDecimals" value="false"/>
+    </javaTypeResolver>
+
+    <!-- 生成实体类的包名和位置 ，targetPackage指的是包名,targetProject值得是路径位置-->
+    <javaModelGenerator targetPackage="com.hanxin.springbootwar.dao.entity" targetProject="src/main/java">
+    </javaModelGenerator>
+
+    <!-- 生成映射文件的包名和位置-->
+    <sqlMapGenerator targetPackage="mybatis" targetProject="src/main/resources">
+    </sqlMapGenerator>
+
+    <!-- 生成DAO的包名和位置-->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.hanxin.springbootwar.dao.mapper" targetProject="src/main/java">
+    </javaClientGenerator>
+
+    <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
+    <table tableName="user_info" domainObjectName="UserInfo"
+      enableCountByExample="true" enableUpdateByExample="true"
+      enableDeleteByExample="true" enableSelectByExample="true"
+      selectByExampleQueryId="true"></table>
+  </context>
+
+</generatorConfiguration>
